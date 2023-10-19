@@ -1,0 +1,64 @@
+<script>
+
+    function getComputerChoice(){
+        let computerChoice = Math.round((Math.random() * 3) + 1);
+
+        switch (computerChoice){
+            case 1:
+                return "Rock";
+            case 2:
+                return "Paper";
+            case 3:
+                return "Scissors";
+            default:
+                return "Rock";
+        }
+        
+    }
+
+    function playRound(){
+       
+        playerChoice = prompt("Enter rock, paper, or scissors");
+        computerChoice = getComputerChoice();
+
+        if (playerChoice == "rock"){
+            if (computerChoice == 'Scissors'){
+                return "You Win! " + playerChoice + " beats " + computerChoice;
+            }else if (computerChoice == "Paper"){
+                return "You Lose! " + computerChoice + " beats " + playerChoice;
+            }else{
+                return "It's a Tie! You both picked " + playerChoice;
+            }
+        }else if (playerChoice == "paper"){
+            if (computerChoice == 'Rock'){
+                return "You Win! " + playerChoice + " beats " + computerChoice;
+            }else if (computerChoice == "Scissors"){
+                return "You Lose! " + computerChoice + " beats " + playerChoice;
+            }else{
+                return "It's a Tie! You both picked " + playerChoice;
+            }
+        }else if (playerChoice == "scissors"){
+            if (computerChoice == 'Paper'){
+                return "You Win! " + playerChoice + " beats " + computerChoice;
+            }else if (computerChoice == "Rock"){
+                return "You Lose! " + computerChoice + " beats " + playerChoice;
+            }else{
+                return "It's a Tie! You both picked " + playerChoice;
+            }
+        }
+    }
+
+
+function game(){
+
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
+
+}
+
+game();
+
+</script>
